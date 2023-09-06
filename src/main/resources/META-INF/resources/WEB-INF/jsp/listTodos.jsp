@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<div>
-			<h1>Hi ${name}! </h1>
+			<h1>Welcome ${name}! </h1>
 			<h3>Your ToDos are </h3>
 			<table>
 				<thead>

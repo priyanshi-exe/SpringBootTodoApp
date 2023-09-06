@@ -1,10 +1,12 @@
-package com.springboot.myfirstwebapp.todo;
+package com.springboot.myfirstwebapp.service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
+
+import com.springboot.myfirstwebapp.model.ToDo;
 
 @Service
 public class ToDoService {

@@ -1,4 +1,4 @@
-package com.springboot.myfirstwebapp.controller;
+package com.springboot.myfirstwebapp.service;
 
 import org.springframework.stereotype.Service;
 
