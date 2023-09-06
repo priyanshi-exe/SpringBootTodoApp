@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ToDoService {
-	private static List<ToDo> todos = new ArrayList<>();
+	private static List<ToDo> todos = new ArrayList<>(); // dynamic list of values
 	static {
 		todos.add(new ToDo(1, "Priyanshi Agarwal", "Learn Spring", LocalDate.now().plusYears(1), false));
 		todos.add(new ToDo(2, "Priyanshi Agarwal", "Learn MERN Stack", LocalDate.now().plusYears(2), false));
