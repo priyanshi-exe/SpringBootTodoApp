@@ -2,6 +2,8 @@ package com.springboot.myfirstwebapp.model;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 
 //Database(MySQL)
 //Static List of todos => Database (H2, MySQL)
@@ -10,6 +12,8 @@ public class ToDo {
 	
 	private int id;
 	private String userName;
+	
+	@Size(min=5, message="Enter atleast 5 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
