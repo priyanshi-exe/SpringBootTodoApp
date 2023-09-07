@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.springboot.myfirstwebapp.model.ToDo;
@@ -31,13 +30,16 @@ public class ToDoController {
 	}
 
 	@RequestMapping(value="add-todo", method=RequestMethod.GET)
-	public String showNewTodoPage() {
+	public String showNewTodoPage(ModelMap model) {
+		String userName = (String)model.get("name");
+		ToDo todo = new ToDo(0, userName, "", LocalDate.now().plusYears(1), false);
+		model.put("todo", todo);
 		return "todo";
 	}
 	@RequestMapping(value="add-todo", method=RequestMethod.POST)
-	public String addNewTodoPage(@RequestParam String description, ModelMap model) {
+	public String addNewTodoPage(ModelMap model, ToDo todo) {
 		String userName = (String)model.get("name");
-		toDoService.addTodo(userName, description, LocalDate.now().plusYears(2), false);
+		toDoService.addTodo(userName, todo.getDescription(), LocalDate.now().plusYears(2), false);
 		return "redirect:list-todos";
 	}
 }
