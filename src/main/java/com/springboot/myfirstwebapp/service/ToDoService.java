@@ -40,9 +40,4 @@ public class ToDoService {
 		ToDo todo = todos.stream().filter(predicate).findFirst().get();
 		return todo;
 	}
-
-//	public void updateTodo(@Valid ToDo todo) {
-//		deleteById(todo.getId());
-//		todos.add(todo);
-//	}
 }

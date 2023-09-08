@@ -60,24 +60,12 @@ public class ToDoController {
 		return "redirect:list-todos";
 	}
 
-//	@RequestMapping(value="update-todo", method=RequestMethod.GET)
 	@RequestMapping("update-todo")
 	public String showUpdatedTodoPage(@RequestParam int id, ModelMap model) {
 		ToDo todo = toDoService.findById(id);
-		toDoService.deleteById(todo.getId());// i added
+		toDoService.deleteById(todo.getId());
 		model.addAttribute("todo", todo);
 		return "todo";
 	}
-	
-//	@RequestMapping(value="update-todo", method=RequestMethod.POST)
-//	public String updateTodo(ModelMap model, @Valid @ModelAttribute("todo") ToDo todo, BindingResult result) {
-//		if(result.hasErrors()) {
-//			return "todo";
-//		}
-//		
-//		String userName = (String)model.get("name");
-//		todo.setUserName(userName);
-//		toDoService.updateTodo(todo);
-//		return "redirect:list-todos";
-//	}
+
 }
