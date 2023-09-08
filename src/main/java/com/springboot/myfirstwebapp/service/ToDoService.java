@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.springboot.myfirstwebapp.model.ToDo;
 
+import jakarta.validation.Valid;
+
 @Service
 public class ToDoService {
 	private static List<ToDo> todos = new ArrayList<>(); // dynamic list of values
@@ -32,4 +34,15 @@ public class ToDoService {
 		Predicate<? super ToDo> predicate = todo-> todo.getId() == id;
 		todos.removeIf(predicate);
 	}
+
+	public ToDo findById(int id) {
+		Predicate<? super ToDo> predicate = todo-> todo.getId() == id;
+		ToDo todo = todos.stream().filter(predicate).findFirst().get();
+		return todo;
+	}
+
+//	public void updateTodo(@Valid ToDo todo) {
+//		deleteById(todo.getId());
+//		todos.add(todo);
+//	}
 }

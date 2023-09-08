@@ -52,6 +52,11 @@
 		    <artifactId>jquery</artifactId>
 		    <version>3.7.1</version> <!-- as it isn't managed by spring-->
 		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap-datepicker</artifactId>
+		    <version>1.10.0</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
