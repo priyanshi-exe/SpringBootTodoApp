@@ -3,7 +3,7 @@
 
 <div class="container">
 	<h1>Enter Todo Details</h1>
-	<form:form method="post" modelAttribute="todo" action="/add-todo">
+	<form:form method="post" modelAttribute="todo">
 	
 		<fieldset class="mb-3">
 			<form:label path="description">Description</form:label>

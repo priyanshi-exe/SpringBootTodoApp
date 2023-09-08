@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 //Database(MySQL)
 //Static List of todos => Database (H2, MySQL)
 
-public class ToDo {
+public class ToDoModel {
 	
 	private int id;
 	private String userName;
@@ -18,7 +18,7 @@ public class ToDo {
 	private LocalDate targetDate;
 	private boolean done;
 	
-	public ToDo(int id, String userName, String description, LocalDate targetDate, boolean done) {
+	public ToDoModel(int id, String userName, String description, LocalDate targetDate, boolean done) {
 		super();
 		this.id = id;
 		this.userName = userName;
