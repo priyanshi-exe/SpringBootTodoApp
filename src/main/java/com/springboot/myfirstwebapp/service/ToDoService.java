@@ -22,7 +22,9 @@ public class ToDoService {
 	}
 	
 	public static List<ToDoModel> findByUsername(String username){
-		return toDoList;
+		Predicate<? super ToDoModel> predicate = 
+				todo-> todo.getUserName().equalsIgnoreCase(username);
+		return toDoList.stream().filter(predicate).toList();
 	}
 	
 	public void addTodo(String userName, String description, LocalDate targetDate, boolean done) {
