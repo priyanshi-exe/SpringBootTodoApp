@@ -1,10 +1,10 @@
-package com.springboot.myfirstwebapp;
+package com.springboot.SpringBootTodoApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MyfirstwebappApplicationTests {
+class SpringBootTodoAppApplicationTests {
 
 	@Test
 	void contextLoads() {

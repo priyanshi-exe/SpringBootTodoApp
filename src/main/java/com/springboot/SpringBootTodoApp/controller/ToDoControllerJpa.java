@@ -1,4 +1,4 @@
-package com.springboot.myfirstwebapp.controller;
+package com.springboot.SpringBootTodoApp.controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.springboot.myfirstwebapp.model.ToDoModel;
-import com.springboot.myfirstwebapp.model.ToDoRepository;
+import com.springboot.SpringBootTodoApp.model.ToDoModel;
+import com.springboot.SpringBootTodoApp.model.ToDoRepository;
 
 import jakarta.validation.Valid;
 

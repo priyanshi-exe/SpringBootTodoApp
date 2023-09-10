@@ -1,4 +1,4 @@
-package com.springboot.myfirstwebapp.configuration;
+package com.springboot.SpringBootTodoApp.configuration;
 
 import static  org.springframework.security.config.Customizer.withDefaults;
 

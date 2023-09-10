@@ -1,4 +1,4 @@
-package com.springboot.myfirstwebapp.model;
+package com.springboot.SpringBootTodoApp.model;
 
 import java.util.List;
 

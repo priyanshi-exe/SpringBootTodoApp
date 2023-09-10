@@ -1,13 +1,13 @@
-package com.springboot.myfirstwebapp;
+package com.springboot.SpringBootTodoApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyfirstwebappApplication {
+public class SpringBootTodoAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyfirstwebappApplication.class, args);
+		SpringApplication.run(SpringBootTodoAppApplication.class, args);
 	}
 
 }
