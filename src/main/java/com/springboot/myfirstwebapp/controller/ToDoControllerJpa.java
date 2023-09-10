@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.springboot.myfirstwebapp.model.ToDoModel;
 import com.springboot.myfirstwebapp.model.ToDoRepository;
-import com.springboot.myfirstwebapp.service.ToDoService;
 
 import jakarta.validation.Valid;
 
