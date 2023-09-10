@@ -15,25 +15,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.springboot.myfirstwebapp.model.ToDoModel;
+import com.springboot.myfirstwebapp.model.ToDoRepository;
 import com.springboot.myfirstwebapp.service.ToDoService;
 
 import jakarta.validation.Valid;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class ToDoController {
+public class ToDoControllerJpa {
 
-	private ToDoService toDoService;
+	private ToDoRepository toDoRepository;
 	
-	public ToDoController(ToDoService toDoService) {
+	public ToDoControllerJpa(ToDoRepository toDoRepository) {
 		super();
-		this.toDoService = toDoService;
+		this.toDoRepository = toDoRepository;
 	}
 
 	@RequestMapping("list-todos") // GetMapping
 	public String listAllTodos(ModelMap model) {
 		String userName = getLoggedInUsername(model);
-		List<ToDoModel> todos  = toDoService.findByUsername(userName);
+		List<ToDoModel> todos  = toDoRepository.findByUserName(userName);
 		model.addAttribute("todos", todos);
 		return "listTodos";
 	}
@@ -53,19 +54,20 @@ public class ToDoController {
 		}
 		
 		String userName = getLoggedInUsername(model);
-		toDoService.addTodo(userName, todo.getDescription(), todo.getTargetDate(), todo.isDone());
+		todo.setUserName(userName);
+		toDoRepository.save(todo);
 		return "redirect:list-todos";
 	}
 
 	@RequestMapping("delete-todo")
 	public String deleteTodo(@RequestParam int id) {
-		toDoService.deleteById(id);
+		toDoRepository.deleteById(id);
 		return "redirect:list-todos";
 	}
 
 	@RequestMapping(value="update-todo", method=RequestMethod.GET)
 	public String updateTodoPage(@RequestParam int id, ModelMap model) {
-		ToDoModel todo = toDoService.findById(id);
+		ToDoModel todo = toDoRepository.findById(id).get();
 		model.put("todo", todo);
 		return "todo";
 	}
@@ -78,7 +80,7 @@ public class ToDoController {
 		
 		String userName = getLoggedInUsername(model);
 		todo.setUserName(userName);
-		toDoService.updateTodo(todo);
+		toDoRepository.save(todo);
 		return "redirect:list-todos";
 	}
 	
